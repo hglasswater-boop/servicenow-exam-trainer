@@ -1,4 +1,5 @@
 import "./styles.css";
+import { Capacitor } from "@capacitor/core";
 import {
   getWrongQuestionIds,
   isCorrectAnswer,
@@ -17,7 +18,8 @@ import {
   recordAttempt
 } from "./storage/progress";
 import { enableAutoUpdate } from "./update/appUpdate";
-import { fetchJson } from "./update/fetchJson";
+import { loadExamJson } from "./update/examData";
+import { shouldEnableServiceWorker } from "./platform/runtime";
 
 interface ExamRegistry {
   exams: string[];
@@ -525,7 +527,10 @@ async function switchExam(examId: string): Promise<void> {
   }
 
   exam = definition;
-  questions = await fetchJson<Question[]>(`./exams/${exam.id}/questions.json`);
+  questions = await loadExamJson<Question[]>(
+    `${exam.id}/questions.json`,
+    Capacitor.isNativePlatform()
+  );
   progress = loadProgress(exam.id);
   session = null;
   renderHome();
@@ -682,10 +687,11 @@ app.addEventListener("change", (event) => {
 });
 
 async function bootstrap(): Promise<void> {
-  const registry = await fetchJson<ExamRegistry>("./exams/index.json");
+  const isNative = Capacitor.isNativePlatform();
+  const registry = await loadExamJson<ExamRegistry>("index.json", isNative);
   examDefinitions = await Promise.all(
     registry.exams.map((examId) =>
-      fetchJson<ExamDefinition>(`./exams/${examId}/exam.json`)
+      loadExamJson<ExamDefinition>(`${examId}/exam.json`, isNative)
     )
   );
 
@@ -696,7 +702,7 @@ async function bootstrap(): Promise<void> {
 
   await switchExam(firstExam.id);
 
-  if ("serviceWorker" in navigator) {
+  if (shouldEnableServiceWorker(isNative, "serviceWorker" in navigator)) {
     void enableAutoUpdate(
       {
         register: (scriptUrl, options) =>
