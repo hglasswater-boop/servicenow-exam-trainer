@@ -39,6 +39,18 @@ jobs:
           yes | "$SDKMANAGER" --licenses >/dev/null || true
           "$SDKMANAGER" "platforms;android-36" "build-tools;36.0.0"
 
+      - name: Export Android signing tools
+        run: |
+          tar -czf android-signing-tools.tgz \
+            -C "$ANDROID_HOME/build-tools/36.0.0" \
+            apksigner zipalign lib/apksigner.jar
+
+      - name: Upload Android signing tools
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-signing-tools
+          path: android-signing-tools.tgz
+
       - name: Install dependencies
         run: npm install
 
