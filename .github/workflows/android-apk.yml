@@ -43,7 +43,7 @@ jobs:
         run: |
           tar -czf android-signing-tools.tgz \
             -C "$ANDROID_HOME/build-tools/36.0.0" \
-            apksigner zipalign lib/apksigner.jar
+            apksigner zipalign lib/apksigner.jar lib64/libc++.so
 
       - name: Upload Android signing tools
         uses: actions/upload-artifact@v4
