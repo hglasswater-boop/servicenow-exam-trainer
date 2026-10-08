@@ -22,11 +22,22 @@ Android native shellではService Workerを利用しない。
 
 これにより、問題データ更新だけならAPK再配布は不要。
 
-## App update
+## Release signing
 
-初期段階ではGitHub Actionsがdebug APKを生成する。
+Android本番APKは固定のrelease signing keyで署名する。同じpackage IDの更新APKは同じ署名鍵を使う。
 
-debug APKは動作確認用。継続的なインプレース更新には固定のrelease signing keyが必要なので、release signingとGitHub Releases経由の本体更新は別Issueで実装する。
+署名鍵はGitへコミットせず、GitHub Actionsでは次のRepository Secretsから復元する。
+
+- `ANDROID_KEYSTORE_BASE64`
+- `ANDROID_KEYSTORE_PASSWORD`
+- `ANDROID_KEY_ALIAS`
+- `ANDROID_KEY_PASSWORD`
+
+CIは `assembleRelease` でunsigned APKを生成し、Secretsが存在する場合のみ `zipalign` + `apksigner` を実行する。最後に `apksigner verify --verbose --print-certs` で署名を検証する。
+
+AndroidのversionCodeはSemVerから `major*10000 + minor*100 + patch` で生成する。v0.5.0はversionCode 500。
+
+release keystoreは端末更新の恒久的な署名IDなので、GitHub以外にも安全なバックアップを保持する。
 
 ## Service worker
 
