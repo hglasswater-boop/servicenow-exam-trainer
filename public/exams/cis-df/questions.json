@@ -1,0 +1,3614 @@
+[
+  {
+    "id": "cis-df-configuration-001",
+    "domainId": "configuration",
+    "objective": "CI Class Manager: hierarchy and attributes",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Linux Serverクラスだけに属性を追加したい。親クラスからの継承範囲を確認してから変更する場合、最初に使うべき機能はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CI Class Manager"
+      },
+      {
+        "id": "b",
+        "label": "CMDB Query Builder"
+      },
+      {
+        "id": "c",
+        "label": "CMDB Data Manager"
+      },
+      {
+        "id": "d",
+        "label": "Dependency View"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CI Class ManagerはCMDBクラス階層、テーブル定義、属性、関連メタデータを一元的に確認・編集できます。子クラスへの属性追加前に階層と継承を確認するのが適切です。",
+    "tags": [
+      "CI Class Manager",
+      "hierarchy"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/t_ViewTableDefinitions.html"
+  },
+  {
+    "id": "cis-df-configuration-002",
+    "domainId": "configuration",
+    "objective": "CI Class Manager: inherited class metadata",
+    "type": "single",
+    "scenario": true,
+    "prompt": "新しい子CIクラスを設計しています。親クラスが持つ属性を子クラスでも利用したい場合、CMDBクラス階層について正しい説明はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "子クラスは親クラスの属性を継承する"
+      },
+      {
+        "id": "b",
+        "label": "子クラスは親クラスの属性を一切利用できない"
+      },
+      {
+        "id": "c",
+        "label": "属性継承はCMDB 360だけで行う"
+      },
+      {
+        "id": "d",
+        "label": "属性継承にはData Managerポリシーが必要"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CMDBのクラス階層では、子クラスは親クラスの属性を継承し、必要に応じて子クラス固有の属性を追加できます。",
+    "tags": [
+      "class hierarchy",
+      "inheritance"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/xanadu/servicenow-platform/configuration-management-database-cmdb/c_CMDBClassifications.html"
+  },
+  {
+    "id": "cis-df-configuration-003",
+    "domainId": "configuration",
+    "objective": "CI Class Manager: class settings",
+    "type": "multiple",
+    "scenario": false,
+    "prompt": "CI Class Managerから直接確認・設定できる内容を2つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "Identification/Reconciliationのクラス設定"
+      },
+      {
+        "id": "b",
+        "label": "CMDB Healthのクラス設定"
+      },
+      {
+        "id": "c",
+        "label": "ユーザーのMFAポリシー"
+      },
+      {
+        "id": "d",
+        "label": "メール受信アクション"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b"
+    ],
+    "explanation": "CI Class Managerはクラス定義に加え、IREとCMDB Healthに関するクラス設定への中心的な入口です。",
+    "tags": [
+      "CI Class Manager",
+      "IRE",
+      "CMDB Health"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/t_ViewTableDefinitions.html"
+  },
+  {
+    "id": "cis-df-configuration-004",
+    "domainId": "configuration",
+    "objective": "CI Class Manager: supported scope",
+    "type": "single",
+    "scenario": true,
+    "prompt": "非CMDBテーブルの定義をCI Class Managerで管理しようとしています。正しい判断はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CI Class Managerは非CMDBテーブルの操作を目的としていない"
+      },
+      {
+        "id": "b",
+        "label": "CI Class Managerは全テーブルを管理する唯一の機能である"
+      },
+      {
+        "id": "c",
+        "label": "CMDB Healthを有効化すれば非CMDBテーブルも自動対応する"
+      },
+      {
+        "id": "d",
+        "label": "Principal Classに指定すれば非CMDBテーブルも対応する"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CI Class ManagerはCMDBクラス向けの機能であり、非CMDBテーブルを扱うための一般的なテーブル管理機能ではありません。",
+    "tags": [
+      "CI Class Manager",
+      "scope"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/t_ViewTableDefinitions.html"
+  },
+  {
+    "id": "cis-df-configuration-005",
+    "domainId": "configuration",
+    "objective": "IRE: identification",
+    "type": "single",
+    "scenario": true,
+    "prompt": "2つのデータソースから同じ物理サーバー情報が届きました。既存CIへの一致判定を担当するIREの仕組みはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Identification rules"
+      },
+      {
+        "id": "b",
+        "label": "Reconciliation rules"
+      },
+      {
+        "id": "c",
+        "label": "CMDB Health audits"
+      },
+      {
+        "id": "d",
+        "label": "Data Manager attestation"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Identification rulesは受信したデータが既存CIと一致するか、新規CIとして扱うかを判断するための識別条件を定義します。",
+    "tags": [
+      "IRE",
+      "identification"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+  },
+  {
+    "id": "cis-df-configuration-006",
+    "domainId": "configuration",
+    "objective": "IRE: reconciliation",
+    "type": "single",
+    "scenario": true,
+    "prompt": "DiscoveryとSCCMが同じCIのOS属性を更新します。どちらのソースに更新を許可するか優先順位を制御する仕組みはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Reconciliation rules"
+      },
+      {
+        "id": "b",
+        "label": "Identification rulesだけ"
+      },
+      {
+        "id": "c",
+        "label": "CSDM domain mapping"
+      },
+      {
+        "id": "d",
+        "label": "Query Builder relationship level"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Reconciliation rulesは複数のdiscovery source間で属性更新の権限や優先順位を管理します。",
+    "tags": [
+      "IRE",
+      "reconciliation"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+  },
+  {
+    "id": "cis-df-configuration-007",
+    "domainId": "configuration",
+    "objective": "IRE: centralized data integrity",
+    "type": "single",
+    "scenario": true,
+    "prompt": "複数の統合がそれぞれ独自ロジックでCMDBを書き換え、重複や上書き競合が増えています。設計改善として最も適切なのはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "識別と調整をIREの中央ルールへ寄せる"
+      },
+      {
+        "id": "b",
+        "label": "各統合に別々の重複判定を追加する"
+      },
+      {
+        "id": "c",
+        "label": "CMDB Healthを無効化する"
+      },
+      {
+        "id": "d",
+        "label": "全CIを同一クラスに移す"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "IREは複数データソースからのCI作成・更新に対し、IdentificationとReconciliationを中央フレームワークとして適用し、CMDB整合性を維持します。",
+    "tags": [
+      "IRE",
+      "data integrity"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+  },
+  {
+    "id": "cis-df-configuration-008",
+    "domainId": "configuration",
+    "objective": "IRE: dependent CI identification",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Network Adapterのように親CIとの関係がなければ意味を持たないCIを識別する設計を確認しています。重要な考え方はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Dependent CIとdependent relationship rule"
+      },
+      {
+        "id": "b",
+        "label": "Principal Classだけ"
+      },
+      {
+        "id": "c",
+        "label": "Attestationだけ"
+      },
+      {
+        "id": "d",
+        "label": "Saved Queryだけ"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Dependent CIは他CIとの依存関係によって意味を持ち、IREの識別でもdependency classificationとdependent relationship rulesが重要です。",
+    "tags": [
+      "dependent CI",
+      "IRE"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/xanadu/servicenow-platform/configuration-management-database-cmdb/c_CMDBClassifications.html"
+  },
+  {
+    "id": "cis-df-configuration-009",
+    "domainId": "configuration",
+    "objective": "IRE: identification and reconciliation roles",
+    "type": "multiple",
+    "scenario": false,
+    "prompt": "IREについて正しい組み合わせを2つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "IdentificationはCIを一意に識別する条件を扱う"
+      },
+      {
+        "id": "b",
+        "label": "Reconciliationはソース間の更新権限・優先度を扱う"
+      },
+      {
+        "id": "c",
+        "label": "IdentificationはCMDB Healthスコアを計算する"
+      },
+      {
+        "id": "d",
+        "label": "ReconciliationはCSDMドメインを決定する"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b"
+    ],
+    "explanation": "IREではIdentificationがCIの識別、Reconciliationが複数ソースによる更新の制御を担当します。",
+    "tags": [
+      "IRE",
+      "identification",
+      "reconciliation"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+  },
+  {
+    "id": "cis-df-configuration-010",
+    "domainId": "configuration",
+    "objective": "CMDB 360: multisource history",
+    "type": "single",
+    "scenario": true,
+    "prompt": "同じCIのCPU属性について、どのdiscovery sourceが過去にどの値を提案したか追跡したい。最も適した機能はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CMDB 360"
+      },
+      {
+        "id": "b",
+        "label": "CMDB Query Builderだけ"
+      },
+      {
+        "id": "c",
+        "label": "Data Manager Delete policy"
+      },
+      {
+        "id": "d",
+        "label": "CSDM Foundation Dashboard"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CMDB 360はdiscovery sourceとCI属性レベルの提案値の履歴を保持し、複数ソースの寄与を追跡できます。",
+    "tags": [
+      "CMDB 360",
+      "multisource"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb360-exp-cmdb-workspace.html"
+  },
+  {
+    "id": "cis-df-configuration-011",
+    "domainId": "configuration",
+    "objective": "CMDB 360: reconciliation analysis",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Reconciliation ruleを変更した後、複数ソースの保持値を使って属性値を再評価したい。適切な機能はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CMDB 360"
+      },
+      {
+        "id": "b",
+        "label": "Dependency View"
+      },
+      {
+        "id": "c",
+        "label": "Attestation"
+      },
+      {
+        "id": "d",
+        "label": "Principal Class filter"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CMDB 360は複数ソースの履歴を保持し、更新したreconciliation rulesを使った属性値の再計算に利用できます。",
+    "tags": [
+      "CMDB 360",
+      "reconciliation"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb360-exp-cmdb-workspace.html"
+  },
+  {
+    "id": "cis-df-configuration-012",
+    "domainId": "configuration",
+    "objective": "CMDB 360: Find Gap query",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Discovery Aでは報告されているがDiscovery Bでは報告されていないCIを探したい。CMDB 360のどのSaved Queryが適切ですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Find Gap"
+      },
+      {
+        "id": "b",
+        "label": "Get Recordsだけ"
+      },
+      {
+        "id": "c",
+        "label": "Delete Related Entry"
+      },
+      {
+        "id": "d",
+        "label": "Compliance Audit"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Find Gap queryは、あるdiscovery sourceが報告するCIと別ソースが報告していないCIのギャップ分析に使います。",
+    "tags": [
+      "CMDB 360",
+      "Find Gap"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb360-exp-cmdb-workspace.html"
+  },
+  {
+    "id": "cis-df-configuration-013",
+    "domainId": "configuration",
+    "objective": "CMDB 360: compare attribute values",
+    "type": "single",
+    "scenario": true,
+    "prompt": "複数のdiscovery sourceが同じCIのlocationに異なる値を報告しているものだけを抽出したい。適切なCMDB 360 queryはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Compare Attribute Values"
+      },
+      {
+        "id": "b",
+        "label": "Find Gap"
+      },
+      {
+        "id": "c",
+        "label": "Attestation"
+      },
+      {
+        "id": "d",
+        "label": "Service Mapping query"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Compare Attribute Valuesは、複数discovery source間またはCMDB現在値との属性差分を見つけるためのqueryです。",
+    "tags": [
+      "CMDB 360",
+      "attribute mismatch"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb360-exp-cmdb-workspace.html"
+  },
+  {
+    "id": "cis-df-configuration-014",
+    "domainId": "configuration",
+    "objective": "CMDB 360: source visibility",
+    "type": "multiple",
+    "scenario": false,
+    "prompt": "CMDB 360の主な価値を2つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "CI属性がどのdiscovery sourceから来たか追跡する"
+      },
+      {
+        "id": "b",
+        "label": "複数ソースの値の不一致を分析する"
+      },
+      {
+        "id": "c",
+        "label": "ユーザー権限を自動付与する"
+      },
+      {
+        "id": "d",
+        "label": "Incident SLAを作成する"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b"
+    ],
+    "explanation": "CMDB 360は複数ソース由来のデータ履歴・不一致・報告ギャップを可視化するための機能です。",
+    "tags": [
+      "CMDB 360",
+      "data provenance"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb360-exp-cmdb-workspace.html"
+  },
+  {
+    "id": "cis-df-configuration-015",
+    "domainId": "configuration",
+    "objective": "Configure: map core CMDB tools to responsibilities",
+    "type": "matching",
+    "scenario": true,
+    "prompt": "CMDB管理者が3つの作業を行います。各作業を最も適切な機能へ対応付けてください。",
+    "matchingItems": [
+      {
+        "id": "class-work",
+        "label": "クラス階層・属性・クラス設定を確認する",
+        "correctTargetId": "class-manager"
+      },
+      {
+        "id": "identify-work",
+        "label": "受信CIの識別と、複数ソースの更新優先度を制御する",
+        "correctTargetId": "ire"
+      },
+      {
+        "id": "source-work",
+        "label": "複数discovery sourceの属性値・履歴・差分を確認する",
+        "correctTargetId": "cmdb360"
+      }
+    ],
+    "matchingTargets": [
+      {
+        "id": "class-manager",
+        "label": "CI Class Manager"
+      },
+      {
+        "id": "ire",
+        "label": "IRE"
+      },
+      {
+        "id": "cmdb360",
+        "label": "CMDB 360"
+      }
+    ],
+    "explanation": "CI Class Managerはクラス管理、IREはIdentification/Reconciliation、CMDB 360は複数ソース由来の値と履歴の分析に使います。",
+    "tags": [
+      "matching",
+      "CI Class Manager",
+      "IRE",
+      "CMDB 360"
+    ],
+    "sourceUrl": "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0012913"
+  },
+  {
+    "id": "cis-df-ingest-001",
+    "domainId": "ingest",
+    "objective": "Ingest: Discovery",
+    "type": "single",
+    "scenario": true,
+    "prompt": "社内ネットワーク上のサーバーを自動検出し、実行ソフトウェアやTCP接続からCI関係もCMDBに取り込みたい。最も直接的な方法はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Discovery"
+      },
+      {
+        "id": "b",
+        "label": "CMDB Query Builder"
+      },
+      {
+        "id": "c",
+        "label": "Attestation"
+      },
+      {
+        "id": "d",
+        "label": "Data Certification"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Discoveryはネットワーク上の対象を検出し、CI情報に加えてソフトウェアや接続情報を使って関係もCMDBへ取り込みます。",
+    "tags": [
+      "Discovery",
+      "relationships"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/c_OptionsToPopulateCMDB.html"
+  },
+  {
+    "id": "cis-df-ingest-002",
+    "domainId": "ingest",
+    "objective": "Ingest: Service Graph Connector",
+    "type": "single",
+    "scenario": true,
+    "prompt": "既にServiceNow Storeに対応コネクタがある第三者製品からCMDBへデータを取り込みたい。まず検討すべきものはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Service Graph Connector"
+      },
+      {
+        "id": "b",
+        "label": "cmdb_ciへの独自直接INSERT"
+      },
+      {
+        "id": "c",
+        "label": "手作業CSVだけ"
+      },
+      {
+        "id": "d",
+        "label": "Client Script"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Service Graph Connectorは第三者データをCMDBへ取り込むための事前定義された統合で、標準化・調整を含むデータパイプラインを提供します。",
+    "tags": [
+      "Service Graph Connector",
+      "third-party"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb-sgc-intro.html"
+  },
+  {
+    "id": "cis-df-ingest-003",
+    "domainId": "ingest",
+    "objective": "Ingest: API Service Graph Connector",
+    "type": "single",
+    "scenario": true,
+    "prompt": "API管理製品のAPIデータをCMDBに標準方式で統合したい。対応製品が存在する場合に適した選択肢はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "API Service Graph Connector"
+      },
+      {
+        "id": "b",
+        "label": "Dependency View"
+      },
+      {
+        "id": "c",
+        "label": "CMDB Health score"
+      },
+      {
+        "id": "d",
+        "label": "Data Manager Archive"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "API Service Graph Connectorは第三者APIデータをCMDBテーブルへ取り込むための標準コネクタです。",
+    "tags": [
+      "API Service Graph Connector",
+      "API"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/api-sgc-available.html"
+  },
+  {
+    "id": "cis-df-ingest-004",
+    "domainId": "ingest",
+    "objective": "Ingest: IntegrationHub ETL",
+    "type": "single",
+    "scenario": true,
+    "prompt": "独自の第三者データソースを取り込み、変換してCMDBクラスと属性へマッピングしたい。適切な機能はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "IntegrationHub ETL"
+      },
+      {
+        "id": "b",
+        "label": "Unified Map"
+      },
+      {
+        "id": "c",
+        "label": "CSDM Dashboard"
+      },
+      {
+        "id": "d",
+        "label": "Duplicate CI Remediator"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "IntegrationHub ETLは第三者データを取り込み、変換・マッピングしてCMDBや対応テーブルへ統合するためのETL transform mapを提供します。",
+    "tags": [
+      "IntegrationHub ETL",
+      "mapping"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/integration-hub-etl/integrationhub-etl.html"
+  },
+  {
+    "id": "cis-df-ingest-005",
+    "domainId": "ingest",
+    "objective": "Ingest: IntegrationHub ETL testing",
+    "type": "single",
+    "scenario": true,
+    "prompt": "本番の定期連携を開始する前に、サンプルデータで変換・マッピング結果を確認したい。最も適した方法はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "IntegrationHub ETLのtest integration runを使う"
+      },
+      {
+        "id": "b",
+        "label": "CMDB Healthを無効化する"
+      },
+      {
+        "id": "c",
+        "label": "全CIをPrincipal Classにする"
+      },
+      {
+        "id": "d",
+        "label": "Attestationを実行する"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "IntegrationHub ETLはエンドツーエンドのガイドとサンプルデータによるテスト実行を提供し、定期連携前に結果を検証できます。",
+    "tags": [
+      "IntegrationHub ETL",
+      "testing"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/integration-hub-etl/integrationhub-etl.html"
+  },
+  {
+    "id": "cis-df-ingest-006",
+    "domainId": "ingest",
+    "objective": "Ingest: minimize technical debt",
+    "type": "single",
+    "scenario": true,
+    "prompt": "既存のService Graph Connectorで要件を満たせるのに、独自スクリプト連携を新規開発する案が出ています。アップグレード性と技術的負債の観点で推奨される選択はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "標準のService Graph Connectorを優先する"
+      },
+      {
+        "id": "b",
+        "label": "独自スクリプトを必ず選ぶ"
+      },
+      {
+        "id": "c",
+        "label": "cmdb_ciへ直接SQL相当で書き込む"
+      },
+      {
+        "id": "d",
+        "label": "IREを無効化する"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "標準コネクタが要件を満たす場合は、プラットフォーム標準のデータパイプラインを利用する方が独自実装より保守性・整合性を保ちやすい設計です。",
+    "tags": [
+      "upgradeability",
+      "technical debt"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb-sgc-intro.html"
+  },
+  {
+    "id": "cis-df-ingest-007",
+    "domainId": "ingest",
+    "objective": "Ingest: CMDB APIs",
+    "type": "single",
+    "scenario": true,
+    "prompt": "外部アプリケーションからプログラムでCMDBのCIを作成・更新する要件があります。ServiceNowが提供する選択肢として適切なのはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CMDB instance API"
+      },
+      {
+        "id": "b",
+        "label": "Dependency View APIだけ"
+      },
+      {
+        "id": "c",
+        "label": "CMDB Health score"
+      },
+      {
+        "id": "d",
+        "label": "Playbook"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "ServiceNowはCMDBをプログラムで作成・更新するためのCMDB APIを提供しています。",
+    "tags": [
+      "API",
+      "CMDB population"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/c_OptionsToPopulateCMDB.html"
+  },
+  {
+    "id": "cis-df-ingest-008",
+    "domainId": "ingest",
+    "objective": "Ingest: manual CI creation with IRE",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Discoveryできない特殊装置を1件だけ手動登録します。重複防止などクラス要件も適用したい場合、最も適した作成方法はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CMDB WorkspaceでIREを利用して手動CIを作成する"
+      },
+      {
+        "id": "b",
+        "label": "独自テーブルへ一旦保存して放置する"
+      },
+      {
+        "id": "c",
+        "label": "CMDB Healthの結果だけ作る"
+      },
+      {
+        "id": "d",
+        "label": "Query Builderで結果行を編集する"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CMDB WorkspaceではIREプロセスを利用しながら手動CIを作成でき、クラス要件と一意性を適用できます。",
+    "tags": [
+      "manual CI",
+      "IRE"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/c_OptionsToPopulateCMDB.html"
+  },
+  {
+    "id": "cis-df-ingest-009",
+    "domainId": "ingest",
+    "objective": "Ingest: Import Sets",
+    "type": "single",
+    "scenario": true,
+    "prompt": "外部ファイルのデータを段階的に取り込み、変換してCMDBへロードする一般的な仕組みを検討しています。候補となるものはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Import Sets"
+      },
+      {
+        "id": "b",
+        "label": "Dependency Views"
+      },
+      {
+        "id": "c",
+        "label": "CMDB Health Compliance"
+      },
+      {
+        "id": "d",
+        "label": "Principal Class filter"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "ServiceNowのCMDB population方法にはImport Setsも含まれ、外部データの取り込みと変換に利用できます。",
+    "tags": [
+      "Import Sets",
+      "ingestion"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/c_OptionsToPopulateCMDB.html"
+  },
+  {
+    "id": "cis-df-ingest-010",
+    "domainId": "ingest",
+    "objective": "Ingest: CI relationships",
+    "type": "single",
+    "scenario": true,
+    "prompt": "CIデータと同時にサーバーとアプリケーションの関係も取り込む設計です。CMDBでCI間の関係を格納する中心テーブルはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CI Relationship [cmdb_rel_ci]"
+      },
+      {
+        "id": "b",
+        "label": "User [sys_user]"
+      },
+      {
+        "id": "c",
+        "label": "Task [task]"
+      },
+      {
+        "id": "d",
+        "label": "Knowledge [kb_knowledge]"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CI Relationship [cmdb_rel_ci]はCMDB内のCI関係を保持するテーブルで、CIデータ取込時の関係管理でも重要です。",
+    "tags": [
+      "relationships",
+      "cmdb_rel_ci"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/c_OptionsToPopulateCMDB.html"
+  },
+  {
+    "id": "cis-df-ingest-011",
+    "domainId": "ingest",
+    "objective": "Ingest: route integrations through IRE",
+    "type": "single",
+    "scenario": true,
+    "prompt": "新しいCMDB統合で、識別ルールとソース優先順位を既存運用と共通化したい。設計として重要なのはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "IREを通してIdentification/Reconciliationを適用する"
+      },
+      {
+        "id": "b",
+        "label": "各統合で別々の識別ロジックを持つ"
+      },
+      {
+        "id": "c",
+        "label": "CMDB Healthをバイパスするため直接更新する"
+      },
+      {
+        "id": "d",
+        "label": "CSDMを無効にする"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CMDB統合ではIREを利用することで、中央管理された識別・調整ルールを適用しデータ整合性を維持できます。",
+    "tags": [
+      "IRE",
+      "integration"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+  },
+  {
+    "id": "cis-df-ingest-012",
+    "domainId": "ingest",
+    "objective": "Ingest: Asset and CI status synchronization",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Assetの状態変更を関連するHardware CIの状態へ同期させたい。ServiceNowの標準機能で設定するものはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Asset-CI Hardware Status Mapping"
+      },
+      {
+        "id": "b",
+        "label": "CMDB Query Builder"
+      },
+      {
+        "id": "c",
+        "label": "Duplicate CI Remediator"
+      },
+      {
+        "id": "d",
+        "label": "CSDM domain"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Asset-CI Hardware Status MappingではAssetのState/SubstateとCI Hardware Statusを対応付け、同期方向も設定できます。",
+    "tags": [
+      "Asset",
+      "CI synchronization"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/it-asset-management/hardware-asset-management/c_ManagingAssets.html"
+  },
+  {
+    "id": "cis-df-ingest-013",
+    "domainId": "ingest",
+    "objective": "Ingest: Asset and CI synchronized fields",
+    "type": "multiple",
+    "scenario": false,
+    "prompt": "Assetと対応CIの間で標準的に同期対象となるフィールドを2つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "Asset tag"
+      },
+      {
+        "id": "b",
+        "label": "Serial number"
+      },
+      {
+        "id": "c",
+        "label": "CMDB Health score"
+      },
+      {
+        "id": "d",
+        "label": "Identification rule name"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b"
+    ],
+    "explanation": "Asset tagやSerial numberなど、多数の資産・CI属性が対応レコード間で同期されます。",
+    "tags": [
+      "Asset",
+      "CI synchronization"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/it-asset-management/hardware-asset-management/c_ManagingAssets.html"
+  },
+  {
+    "id": "cis-df-ingest-014",
+    "domainId": "ingest",
+    "objective": "Ingest: Asset/CI cost direction",
+    "type": "single",
+    "scenario": true,
+    "prompt": "CostフィールドのAsset/CI同期について正しい説明はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CostはAssetからCIへの一方向同期"
+      },
+      {
+        "id": "b",
+        "label": "CostはCIからAssetへのみ同期"
+      },
+      {
+        "id": "c",
+        "label": "Costは常に双方向同期"
+      },
+      {
+        "id": "d",
+        "label": "Costは同期対象外"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "標準のAsset/CI同期ではCostは情報目的でAssetからCIへの一方向同期です。",
+    "tags": [
+      "Asset",
+      "cost"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/it-asset-management/hardware-asset-management/c_ManagingAssets.html"
+  },
+  {
+    "id": "cis-df-ingest-015",
+    "domainId": "ingest",
+    "objective": "Ingest: hardware and install status",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Hardware CIでHardware Statusを更新したらInstall Statusも自動的に同じ値へ変わると想定しています。正しい理解はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "2つのフィールドは独立しており自動連動しない"
+      },
+      {
+        "id": "b",
+        "label": "常に同じ値へ連動する"
+      },
+      {
+        "id": "c",
+        "label": "CMDB 360が同値化する"
+      },
+      {
+        "id": "d",
+        "label": "Principal Classなら連動する"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Hardware StatusとInstall Statusは独立したフィールドで、片方の変更がもう片方を自動変更する関係ではありません。",
+    "tags": [
+      "Hardware Status",
+      "Install Status"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/it-asset-management/hardware-asset-management/c_ManagingAssets.html"
+  },
+  {
+    "id": "cis-df-ingest-016",
+    "domainId": "ingest",
+    "objective": "Ingest: non-discoverable data",
+    "type": "single",
+    "scenario": true,
+    "prompt": "所有者が管理する契約上の識別子などDiscoveryで取得できない属性を維持する必要があります。適切な考え方はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "標準のCMDBクラス/属性に責任者を定めて管理する"
+      },
+      {
+        "id": "b",
+        "label": "Discoveryできない情報はCMDBに保持しない"
+      },
+      {
+        "id": "c",
+        "label": "毎回新しい独自テーブルを作る"
+      },
+      {
+        "id": "d",
+        "label": "全て自由記述にして所有者を持たない"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Blueprintはnon-discoverable/manual CIや属性を適切にpopulate・maintainできることを求めています。標準モデルに沿って責任と更新方法を定めるのが目的です。",
+    "tags": [
+      "manual data",
+      "governed ingestion"
+    ],
+    "sourceUrl": "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0012913"
+  },
+  {
+    "id": "cis-df-ingest-017",
+    "domainId": "ingest",
+    "objective": "Ingest: compliance identifiers",
+    "type": "single",
+    "scenario": true,
+    "prompt": "規制・セキュリティ上の識別子をサービスやアプリケーションと結び付けて追跡したい。CIS-DFの観点で最も重要なのはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "該当するCSDMオブジェクトと識別子を一貫して関連付ける"
+      },
+      {
+        "id": "b",
+        "label": "識別子を担当者の個人スプレッドシートだけで管理する"
+      },
+      {
+        "id": "c",
+        "label": "CMDBとは別に重複した自由形式データを量産する"
+      },
+      {
+        "id": "d",
+        "label": "関係を持たせずコメント欄だけに保存する"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CIS-DF Blueprintではsecurity/regulatory compliance identifiersをCSDM objectsに対して追跡できることがIngest領域の論点です。",
+    "tags": [
+      "compliance identifiers",
+      "CSDM"
+    ],
+    "sourceUrl": "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0012913"
+  },
+  {
+    "id": "cis-df-ingest-018",
+    "domainId": "ingest",
+    "objective": "Ingest: choose the appropriate ingestion method",
+    "type": "matching",
+    "scenario": true,
+    "prompt": "各データ取り込み要件を、最も適切なServiceNow機能へ対応付けてください。使用しない選択肢があります。",
+    "matchingItems": [
+      {
+        "id": "network",
+        "label": "ネットワーク上のインフラを自動検出してCIを作成する",
+        "correctTargetId": "discovery"
+      },
+      {
+        "id": "supported-product",
+        "label": "対応済みの第三者製品から標準コネクタでCMDBへ取り込む",
+        "correctTargetId": "sgc"
+      },
+      {
+        "id": "custom-source",
+        "label": "独自データソースを変換・マッピングしてCMDBへ取り込む",
+        "correctTargetId": "etl"
+      }
+    ],
+    "matchingTargets": [
+      {
+        "id": "discovery",
+        "label": "Discovery"
+      },
+      {
+        "id": "sgc",
+        "label": "Service Graph Connector"
+      },
+      {
+        "id": "etl",
+        "label": "IntegrationHub ETL"
+      },
+      {
+        "id": "query-builder",
+        "label": "CMDB Query Builder"
+      }
+    ],
+    "explanation": "Discoveryはインフラ検出、Service Graph Connectorは対応済み第三者製品、IntegrationHub ETLは独自データの変換・マッピングに適します。Query Builderは取り込み機能ではありません。",
+    "tags": [
+      "matching",
+      "Discovery",
+      "Service Graph Connector",
+      "IntegrationHub ETL"
+    ],
+    "sourceUrl": "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0012913"
+  },
+  {
+    "id": "cis-df-ingest-019",
+    "domainId": "ingest",
+    "objective": "Ingest: maintainability",
+    "type": "multiple",
+    "scenario": true,
+    "prompt": "新規連携の設計レビューで、将来のアップグレードを妨げにくい案を2つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "対応する標準コネクタを優先する"
+      },
+      {
+        "id": "b",
+        "label": "Identification/ReconciliationをIREに委ねる"
+      },
+      {
+        "id": "c",
+        "label": "cmdb_ciへ独自スクリプトで無条件に直接書き込む"
+      },
+      {
+        "id": "d",
+        "label": "ソースごとに別の重複判定を埋め込む"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b"
+    ],
+    "explanation": "標準コネクタとIREを活用すると、データパイプラインと識別・調整をプラットフォーム標準へ寄せられ、独自ロジックの増殖を抑えられます。",
+    "tags": [
+      "upgradeability",
+      "IRE",
+      "standard integration"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb-sgc-intro.html"
+  },
+  {
+    "id": "cis-df-govern-001",
+    "domainId": "govern",
+    "objective": "CMDB Health: Completeness required",
+    "type": "single",
+    "scenario": true,
+    "prompt": "サーバーCIで必須にしたSerial numberが未入力のものを品質問題として検出したい。該当するCMDB Health KPIはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Completeness"
+      },
+      {
+        "id": "b",
+        "label": "Correctness"
+      },
+      {
+        "id": "c",
+        "label": "Compliance"
+      },
+      {
+        "id": "d",
+        "label": "Relationships"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CompletenessはRequired/Recommendedフィールドの未入力を評価します。",
+    "tags": [
+      "CMDB Health",
+      "Completeness"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/r_CMDBHealthMetrics.html"
+  },
+  {
+    "id": "cis-df-govern-002",
+    "domainId": "govern",
+    "objective": "CMDB Health: Completeness recommended",
+    "type": "single",
+    "scenario": true,
+    "prompt": "必須ではないが運用品質上入力を推奨するOwnerフィールドの欠落を測りたい。該当するmetricはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Recommended under Completeness"
+      },
+      {
+        "id": "b",
+        "label": "Duplicate under Correctness"
+      },
+      {
+        "id": "c",
+        "label": "Compliance audit"
+      },
+      {
+        "id": "d",
+        "label": "Stale Relationships"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CompletenessのRecommended metricはrecommendedとして設定されたフィールドの欠落を測定します。",
+    "tags": [
+      "CMDB Health",
+      "Recommended"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/r_CMDBHealthMetrics.html"
+  },
+  {
+    "id": "cis-df-govern-003",
+    "domainId": "govern",
+    "objective": "CMDB Health: Correctness duplicate",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Identification ruleに照らして同一と思われるCIが複数存在します。主にどのHealth観点で扱われますか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Correctness"
+      },
+      {
+        "id": "b",
+        "label": "Completeness"
+      },
+      {
+        "id": "c",
+        "label": "Compliance"
+      },
+      {
+        "id": "d",
+        "label": "Availability"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CorrectnessにはDuplicate、Orphan、Staleなどデータ整合性に関するmetricが含まれます。",
+    "tags": [
+      "CMDB Health",
+      "duplicate"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/overview-cmdb-health.html"
+  },
+  {
+    "id": "cis-df-govern-004",
+    "domainId": "govern",
+    "objective": "CMDB Health: Correctness orphan",
+    "type": "single",
+    "scenario": true,
+    "prompt": "本来必要な関係を持たず孤立しているCIを検出したい。最も関連するHealth観点はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CorrectnessのOrphan"
+      },
+      {
+        "id": "b",
+        "label": "CompletenessのRequired"
+      },
+      {
+        "id": "c",
+        "label": "Complianceだけ"
+      },
+      {
+        "id": "d",
+        "label": "Recommended field"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CMDB HealthのCorrectnessはorphan CI ruleを含むデータ整合性ルールでCIを評価します。",
+    "tags": [
+      "CMDB Health",
+      "orphan"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/overview-cmdb-health.html"
+  },
+  {
+    "id": "cis-df-govern-005",
+    "domainId": "govern",
+    "objective": "CMDB Health: Correctness stale",
+    "type": "single",
+    "scenario": true,
+    "prompt": "一定期間更新されていないCIを品質上の問題として検出したい。使うべきmetricはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Stale under Correctness"
+      },
+      {
+        "id": "b",
+        "label": "Required under Completeness"
+      },
+      {
+        "id": "c",
+        "label": "Duplicate Relationships"
+      },
+      {
+        "id": "d",
+        "label": "Certification"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Stale CIはCorrectnessの代表的なmetricで、staleness ruleに基づき判定されます。",
+    "tags": [
+      "CMDB Health",
+      "stale"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/r_CMDBHealthMetrics.html"
+  },
+  {
+    "id": "cis-df-govern-006",
+    "domainId": "govern",
+    "objective": "CMDB Health: Compliance",
+    "type": "single",
+    "scenario": true,
+    "prompt": "CIの属性値が組織の定義した期待値テンプレートに適合するか監査したい。該当するKPIはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Compliance"
+      },
+      {
+        "id": "b",
+        "label": "Completeness"
+      },
+      {
+        "id": "c",
+        "label": "Correctness"
+      },
+      {
+        "id": "d",
+        "label": "Relationships"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "ComplianceはCMDB auditの結果を用いて、定義された期待条件にデータが適合しているかを評価します。",
+    "tags": [
+      "CMDB Health",
+      "Compliance"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/r_CMDBHealthMetrics.html"
+  },
+  {
+    "id": "cis-df-govern-007",
+    "domainId": "govern",
+    "objective": "CMDB Health: Relationships",
+    "type": "single",
+    "scenario": true,
+    "prompt": "parent/childが同じでrelation typeも同一の関係レコードが重複しています。確認すべきmetricはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Duplicate Relationships"
+      },
+      {
+        "id": "b",
+        "label": "Required fields"
+      },
+      {
+        "id": "c",
+        "label": "CI Duplicate"
+      },
+      {
+        "id": "d",
+        "label": "Attestation"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Relationships KPIにはDuplicate Relationshipsがあり、同一parent/child/typeの重複関係を検出します。",
+    "tags": [
+      "CMDB Health",
+      "relationships"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/r_CMDBHealthMetrics.html"
+  },
+  {
+    "id": "cis-df-govern-008",
+    "domainId": "govern",
+    "objective": "CMDB Health: relationship integrity",
+    "type": "multiple",
+    "scenario": false,
+    "prompt": "Relationships KPIで確認できる問題を2つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "Orphan Relationships"
+      },
+      {
+        "id": "b",
+        "label": "Stale Relationships"
+      },
+      {
+        "id": "c",
+        "label": "User role duplication"
+      },
+      {
+        "id": "d",
+        "label": "Email delivery failure"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b"
+    ],
+    "explanation": "Relationships KPIはorphan、duplicate、stale relationshipsや推奨/hosting/containment ruleへの適合などを評価します。",
+    "tags": [
+      "CMDB Health",
+      "relationships"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/r_CMDBHealthMetrics.html"
+  },
+  {
+    "id": "cis-df-govern-009",
+    "domainId": "govern",
+    "objective": "CMDB Health: dashboard aggregation",
+    "type": "single",
+    "scenario": true,
+    "prompt": "品質結果を個別CIだけでなく、クラスやサービス単位で追いたい。CMDB Healthについて正しい説明はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Health結果はクラス・health group・service・relationshipなどに集約されdashboardに表示される"
+      },
+      {
+        "id": "b",
+        "label": "Healthは個別CIにしか結果を持たない"
+      },
+      {
+        "id": "c",
+        "label": "HealthはAssetだけを対象にする"
+      },
+      {
+        "id": "d",
+        "label": "Health結果はQuery Builderでしか見られない"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CMDB Healthはmetric結果を複数のレベルで集約し、dashboardで可視化します。",
+    "tags": [
+      "CMDB Health",
+      "dashboard"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/overview-cmdb-health.html"
+  },
+  {
+    "id": "cis-df-govern-010",
+    "domainId": "govern",
+    "objective": "CMDB Health: quality dimensions",
+    "type": "multiple",
+    "scenario": false,
+    "prompt": "CMDB Healthの主要KPIを4つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "Completeness"
+      },
+      {
+        "id": "b",
+        "label": "Correctness"
+      },
+      {
+        "id": "c",
+        "label": "Compliance"
+      },
+      {
+        "id": "d",
+        "label": "Relationships"
+      },
+      {
+        "id": "e",
+        "label": "Password Strength"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "explanation": "CMDB HealthはCompleteness、Correctness、Compliance、RelationshipsのKPIでデータ品質を監視します。",
+    "tags": [
+      "CMDB Health",
+      "KPI"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/overview-cmdb-health.html"
+  },
+  {
+    "id": "cis-df-govern-011",
+    "domainId": "govern",
+    "objective": "Data Manager: Attestation",
+    "type": "single",
+    "scenario": true,
+    "prompt": "CI所有者に「このCIは実在し、現在も管理対象である」と定期確認してもらいたい。適切なData Manager policy typeはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Attestation"
+      },
+      {
+        "id": "b",
+        "label": "Archive"
+      },
+      {
+        "id": "c",
+        "label": "Delete"
+      },
+      {
+        "id": "d",
+        "label": "Retire"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Attestation policyはCIの存在や所有対象であることをレビュータスクで確認し、CMDBの整合性維持に使います。",
+    "tags": [
+      "Data Manager",
+      "Attestation"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/cmdb-data-management.html"
+  },
+  {
+    "id": "cis-df-govern-012",
+    "domainId": "govern",
+    "objective": "Data Manager: Certification",
+    "type": "single",
+    "scenario": true,
+    "prompt": "特定属性が会社標準で定めた値になっていることをレビュー・認証したい。適切なpolicy typeはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Certification"
+      },
+      {
+        "id": "b",
+        "label": "Attestation"
+      },
+      {
+        "id": "c",
+        "label": "Delete"
+      },
+      {
+        "id": "d",
+        "label": "Archive"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Certification policyは指定属性が期待する値であることをcertifyするために使います。",
+    "tags": [
+      "Data Manager",
+      "Certification"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/cmdb-data-management.html"
+  },
+  {
+    "id": "cis-df-govern-013",
+    "domainId": "govern",
+    "objective": "Data Manager: Retire",
+    "type": "single",
+    "scenario": true,
+    "prompt": "1年以上Ownerが空のコンピューターを廃止状態へ移したい。適切なpolicy typeはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Retire"
+      },
+      {
+        "id": "b",
+        "label": "Archive"
+      },
+      {
+        "id": "c",
+        "label": "Delete"
+      },
+      {
+        "id": "d",
+        "label": "Attestation"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Retire policyは条件に合うCIをretired stateへ移すライフサイクル管理に使います。",
+    "tags": [
+      "Data Manager",
+      "Retire"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/cmdb-data-management.html"
+  },
+  {
+    "id": "cis-df-govern-014",
+    "domainId": "govern",
+    "objective": "Data Manager: Archive",
+    "type": "single",
+    "scenario": true,
+    "prompt": "廃止済みLinux Serverを通常テーブルから外し、一定期間は復元可能な形で保管したい。適切なpolicy typeはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Archive"
+      },
+      {
+        "id": "b",
+        "label": "Delete"
+      },
+      {
+        "id": "c",
+        "label": "Certification"
+      },
+      {
+        "id": "d",
+        "label": "Attestation"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "ArchiveはCIをarchive tableへ移し、一時保持期間中は復元可能です。保持期間終了後はarchive tableから削除されます。",
+    "tags": [
+      "Data Manager",
+      "Archive"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/cmdb-data-management.html"
+  },
+  {
+    "id": "cis-df-govern-015",
+    "domainId": "govern",
+    "objective": "Data Manager: Delete",
+    "type": "single",
+    "scenario": true,
+    "prompt": "廃止済みコンテナCIを復元する必要がなく、CMDBから削除したい。適切なpolicy typeはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Delete"
+      },
+      {
+        "id": "b",
+        "label": "Archive"
+      },
+      {
+        "id": "c",
+        "label": "Attestation"
+      },
+      {
+        "id": "d",
+        "label": "Certification"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Delete policyはCIを現在のテーブルから削除し、active stateへ戻す復元オプションを持ちません。",
+    "tags": [
+      "Data Manager",
+      "Delete"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/cmdb-data-management.html"
+  },
+  {
+    "id": "cis-df-govern-016",
+    "domainId": "govern",
+    "objective": "Data Manager: lifecycle policy requirements",
+    "type": "single",
+    "scenario": true,
+    "prompt": "ServerクラスにRetire policyを作成しようとしたところ要件不足で失敗しました。最初に確認すべきものはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "対象クラスのactive retirement definition"
+      },
+      {
+        "id": "b",
+        "label": "Query Builderのbatch size"
+      },
+      {
+        "id": "c",
+        "label": "NLQのsystem property"
+      },
+      {
+        "id": "d",
+        "label": "CSDM dashboardのstage"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Retire、Archive、Delete policyでは、対象クラスごとにactive retirement definitionが必要です。",
+    "tags": [
+      "Data Manager",
+      "retirement definition"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/life-cycle-rules.html"
+  },
+  {
+    "id": "cis-df-govern-017",
+    "domainId": "govern",
+    "objective": "Data Manager: lifecycle sequencing",
+    "type": "single",
+    "scenario": true,
+    "prompt": "CSDM標準に沿ってCIのArchive/Deleteを運用したい。適切な考え方はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "まずretired stateを判定し、その後Archive/Deleteを適用する"
+      },
+      {
+        "id": "b",
+        "label": "Active CIを無条件に即Deleteする"
+      },
+      {
+        "id": "c",
+        "label": "すべてのCIを同日にArchiveする"
+      },
+      {
+        "id": "d",
+        "label": "RetireとDeleteの状態を区別しない"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Data Managerのlife-cycle policiesはretirement definitionを使い、Archive/Delete前にretired stateを確認する標準的な流れを構成できます。",
+    "tags": [
+      "lifecycle",
+      "CSDM",
+      "Data Manager"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/life-cycle-rules.html"
+  },
+  {
+    "id": "cis-df-govern-018",
+    "domainId": "govern",
+    "objective": "Data Manager: CMDB hierarchy scope",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Data Managerの通常のCI lifecycle policyを非CMDB業務テーブルへそのまま適用しようとしています。正しい説明はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "通常のData Manager CI policyはcmdb_ciを継承するクラスが対象"
+      },
+      {
+        "id": "b",
+        "label": "すべてのtask系テーブルが対象"
+      },
+      {
+        "id": "c",
+        "label": "sys_userだけが対象"
+      },
+      {
+        "id": "d",
+        "label": "対象テーブルに制約はない"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CMDB Data Manager policyは基本的にConfiguration Item [cmdb_ci]を継承するクラスへ適用します。関連テーブル向けには別のDelete CMDB Related Entry policyがあります。",
+    "tags": [
+      "Data Manager",
+      "scope"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/cmdb-data-management.html"
+  },
+  {
+    "id": "cis-df-govern-019",
+    "domainId": "govern",
+    "objective": "Data Manager: exclusion list",
+    "type": "single",
+    "scenario": true,
+    "prompt": "ある特定の重要CIだけは同じクラスのDelete policy対象から除外したい。適切な仕組みはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CI exclusion list"
+      },
+      {
+        "id": "b",
+        "label": "Identification ruleを削除する"
+      },
+      {
+        "id": "c",
+        "label": "Principal Classを解除するだけ"
+      },
+      {
+        "id": "d",
+        "label": "CMDB Healthを停止する"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CI exclusion listは指定policy typeを適用しないCI集合を定義するために使います。",
+    "tags": [
+      "Data Manager",
+      "exclusion"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/cmdb-data-management.html"
+  },
+  {
+    "id": "cis-df-govern-020",
+    "domainId": "govern",
+    "objective": "Data Manager: Managed by Group",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Data Managerの承認タスクを適切な管理グループへ流したい。CIのどの属性を整備することが重要ですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Managed by Group"
+      },
+      {
+        "id": "b",
+        "label": "Short description"
+      },
+      {
+        "id": "c",
+        "label": "Created by"
+      },
+      {
+        "id": "d",
+        "label": "Sys ID"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Managed by Groupを設定するとData Manager policy approvalを適切なグループへ流しやすくなります。未設定の場合は管理者介入が必要になる場合があります。",
+    "tags": [
+      "Managed by Group",
+      "Data Manager"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/common-service-data-model-csdm/csdm-data-synchronize-enable.html"
+  },
+  {
+    "id": "cis-df-govern-021",
+    "domainId": "govern",
+    "objective": "Data Manager: policy purposes",
+    "type": "multiple",
+    "scenario": false,
+    "prompt": "Data Managerで実現できる用途を3つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "CIのAttestation"
+      },
+      {
+        "id": "b",
+        "label": "CIのArchive"
+      },
+      {
+        "id": "c",
+        "label": "CIのRetire"
+      },
+      {
+        "id": "d",
+        "label": "CMDB Query Builderのcanvas配置"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Data Managerはpolicy-drivenにAttestation、Retire、Archive、Delete、CertificationなどCI lifecycle/governanceを管理します。",
+    "tags": [
+      "Data Manager",
+      "policies"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/cmdb-data-management.html"
+  },
+  {
+    "id": "cis-df-govern-022",
+    "domainId": "govern",
+    "objective": "Duplicate CI: detection",
+    "type": "single",
+    "scenario": true,
+    "prompt": "IRE処理が同一と判断できる複数CIを検出しました。通常、レビュー・是正のために作成されるものはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "De-duplication task"
+      },
+      {
+        "id": "b",
+        "label": "Incident SLA"
+      },
+      {
+        "id": "c",
+        "label": "CSDM domain"
+      },
+      {
+        "id": "d",
+        "label": "Saved Query only"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "IREがduplicate CIsを検出すると、重複セットごとにde-duplication taskを作成してレビューとremediationを行えるようにします。",
+    "tags": [
+      "duplicate",
+      "IRE"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/de-duplication-tasks.html"
+  },
+  {
+    "id": "cis-df-govern-023",
+    "domainId": "govern",
+    "objective": "Duplicate CI: remediation wizard",
+    "type": "single",
+    "scenario": true,
+    "prompt": "単一のde-duplication taskを画面のガイドに沿って統合したい。使うべき機能はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Duplicate CI Remediator"
+      },
+      {
+        "id": "b",
+        "label": "CMDB Query Builder"
+      },
+      {
+        "id": "c",
+        "label": "Data Manager Archive"
+      },
+      {
+        "id": "d",
+        "label": "Intelligent Search"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Duplicate CI Remediatorは単一de-duplication taskの重複CI統合をガイドするwizardです。",
+    "tags": [
+      "duplicate",
+      "remediation"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/reconcile-dup-task.html"
+  },
+  {
+    "id": "cis-df-govern-024",
+    "domainId": "govern",
+    "objective": "Duplicate CI: main CI",
+    "type": "single",
+    "scenario": true,
+    "prompt": "重複CIを統合する際、残す代表CIを決める必要があります。Duplicate CI Remediatorで行う操作として正しいものはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Main CIを選択する"
+      },
+      {
+        "id": "b",
+        "label": "全CIを必ず削除する"
+      },
+      {
+        "id": "c",
+        "label": "Identification ruleを無効化する"
+      },
+      {
+        "id": "d",
+        "label": "全属性を空にする"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "重複remediationでは保持するMain CIを選び、重複側の属性・関係などを適切に統合します。",
+    "tags": [
+      "duplicate",
+      "main CI"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/de-duplication-tasks.html"
+  },
+  {
+    "id": "cis-df-govern-025",
+    "domainId": "govern",
+    "objective": "Duplicate CI: root cause prevention",
+    "type": "single",
+    "scenario": true,
+    "prompt": "重複CIをwizardで統合した後も新しい重複が発生し続けています。再発防止として最も重要なのはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Identification rulesと取込経路のIRE利用を見直す"
+      },
+      {
+        "id": "b",
+        "label": "重複CIを画面から非表示にする"
+      },
+      {
+        "id": "c",
+        "label": "CMDB HealthのDuplicate metricを無効化する"
+      },
+      {
+        "id": "d",
+        "label": "全CIを手動登録に切り替える"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "重複の是正だけでなく、IREのIdentification ruleや取込設計を見直し、同じ原因で新規重複が作られないようにする必要があります。",
+    "tags": [
+      "duplicate",
+      "root cause",
+      "IRE"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/c_CMDBIdentifyandReconcile.html"
+  },
+  {
+    "id": "cis-df-govern-026",
+    "domainId": "govern",
+    "objective": "Duplicate CI: data integrity",
+    "type": "multiple",
+    "scenario": false,
+    "prompt": "duplicate CI remediationの目的として適切なものを2つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "冗長なCIを統合してCMDBの信頼性を高める"
+      },
+      {
+        "id": "b",
+        "label": "属性や関係をMain CIへ適切に集約する"
+      },
+      {
+        "id": "c",
+        "label": "重複検出を永久に停止する"
+      },
+      {
+        "id": "d",
+        "label": "全てのIdentification ruleを削除する"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b"
+    ],
+    "explanation": "Duplicate CI remediationは重複を単一のMain CIへ統合し、必要な属性・関係を保ちながらデータ整合性を改善するために行います。",
+    "tags": [
+      "duplicate",
+      "data integrity"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/de-duplication-tasks.html"
+  },
+  {
+    "id": "cis-df-govern-027",
+    "domainId": "govern",
+    "objective": "CMDB Workspace: central management",
+    "type": "single",
+    "scenario": true,
+    "prompt": "CMDBの検索、Health、最近の変更、Data ManagerやCMDB 360への入口を一元化したい。適切なUIはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CMDB Workspace"
+      },
+      {
+        "id": "b",
+        "label": "Knowledge Workspace"
+      },
+      {
+        "id": "c",
+        "label": "Service Catalogだけ"
+      },
+      {
+        "id": "d",
+        "label": "Update Set list"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CMDB WorkspaceはCMDBを検索・探索し、Healthや最近の活動を確認し、各種CMDB dashboard/toolsへアクセスする中心的なworkspaceです。",
+    "tags": [
+      "CMDB Workspace"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/setup-cmdb-workspace.html"
+  },
+  {
+    "id": "cis-df-govern-028",
+    "domainId": "govern",
+    "objective": "CMDB Workspace: My Work",
+    "type": "single",
+    "scenario": true,
+    "prompt": "自分に割り当てられたData Managerのattestation taskを処理したい。CMDB Workspaceのどのviewが適切ですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "My Work"
+      },
+      {
+        "id": "b",
+        "label": "CMDB 360"
+      },
+      {
+        "id": "c",
+        "label": "Insightsだけ"
+      },
+      {
+        "id": "d",
+        "label": "Query Builder canvas"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "My Work viewでは割り当てられたCMDB Data Manager task（attestationなど）を管理できます。",
+    "tags": [
+      "CMDB Workspace",
+      "My Work"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/setup-cmdb-workspace.html"
+  },
+  {
+    "id": "cis-df-govern-029",
+    "domainId": "govern",
+    "objective": "CMDB Workspace: Management",
+    "type": "single",
+    "scenario": true,
+    "prompt": "CMDB Adminとしてhealth indicator、recent activity、Data Manager policy、各management toolへアクセスしたい。適切なviewはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Management"
+      },
+      {
+        "id": "b",
+        "label": "My Workだけ"
+      },
+      {
+        "id": "c",
+        "label": "CMDB 360だけ"
+      },
+      {
+        "id": "d",
+        "label": "Homeの検索欄だけ"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Management viewはCMDB Admin向けにhealthや活動を確認し、Data Managerや各種management dashboard/toolsへアクセスするためのviewです。",
+    "tags": [
+      "CMDB Workspace",
+      "Management"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/setup-cmdb-workspace.html"
+  },
+  {
+    "id": "cis-df-govern-030",
+    "domainId": "govern",
+    "objective": "Principal Class: governance focus",
+    "type": "single",
+    "scenario": true,
+    "prompt": "CMDBに数百クラスありますが、まず日常業務上重要なクラスのHealth・Certification・Lifecycle管理に集中したい。使うべき考え方はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Principal Classes"
+      },
+      {
+        "id": "b",
+        "label": "全クラスを必ず同じ優先度にする"
+      },
+      {
+        "id": "c",
+        "label": "すべてを非CMDBテーブルへ移す"
+      },
+      {
+        "id": "d",
+        "label": "Healthを無効化する"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Principal Classは運用上重要なCIクラスへガバナンスと品質管理の焦点を当てるための指定です。",
+    "tags": [
+      "Principal Class",
+      "governance"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/update-principal-class-filter.html"
+  },
+  {
+    "id": "cis-df-govern-031",
+    "domainId": "govern",
+    "objective": "Principal Class: inheritance behavior",
+    "type": "single",
+    "scenario": true,
+    "prompt": "親クラスをPrincipal Classに指定したので全子クラスも自動的にPrincipalになると考えています。正しい説明はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Principal Class指定は子クラスへ自動継承されない"
+      },
+      {
+        "id": "b",
+        "label": "必ず全子クラスへ自動継承される"
+      },
+      {
+        "id": "c",
+        "label": "CMDB 360が子クラスを自動指定する"
+      },
+      {
+        "id": "d",
+        "label": "Data Managerだけが決める"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Principal Class designationは現在のクラスに適用され、子クラスへ自動継承されません。",
+    "tags": [
+      "Principal Class",
+      "inheritance"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/update-principal-class-filter.html"
+  },
+  {
+    "id": "cis-df-govern-032",
+    "domainId": "govern",
+    "objective": "Governance: ownership",
+    "type": "single",
+    "scenario": true,
+    "prompt": "CMDB品質問題が発生しても担当が曖昧で放置されます。改善策として最も重要なのはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CIクラス/CIの管理責任とManaged by Groupを明確化する"
+      },
+      {
+        "id": "b",
+        "label": "全ユーザーにadminを付与する"
+      },
+      {
+        "id": "c",
+        "label": "必須属性を全て削除する"
+      },
+      {
+        "id": "d",
+        "label": "重複CIを非表示にする"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "持続的なCMDB governanceでは、誰がデータ品質と是正を担うかを明確にすることが重要です。Managed by GroupはData Manager運用でもその責任先として使われます。",
+    "tags": [
+      "governance",
+      "ownership"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/common-service-data-model-csdm/csdm-data-synchronize-enable.html"
+  },
+  {
+    "id": "cis-df-govern-033",
+    "domainId": "govern",
+    "objective": "Governance: continuous operation",
+    "type": "multiple",
+    "scenario": true,
+    "prompt": "年1回の大掃除だけではCMDB品質がすぐ悪化します。より適切な運用を2つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "Health指標を継続監視する"
+      },
+      {
+        "id": "b",
+        "label": "Data Manager等でlifecycle policyを継続運用する"
+      },
+      {
+        "id": "c",
+        "label": "品質問題が増えるまで測定しない"
+      },
+      {
+        "id": "d",
+        "label": "各統合に独自ルールを無秩序に追加する"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b"
+    ],
+    "explanation": "CMDB品質は継続的なHealth監視とpolicy-drivenなlifecycle/governanceを運用することで維持します。",
+    "tags": [
+      "governance",
+      "continuous improvement"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/overview-cmdb-health.html"
+  },
+  {
+    "id": "cis-df-govern-034",
+    "domainId": "govern",
+    "objective": "Governance: data quality validation",
+    "type": "multiple",
+    "scenario": true,
+    "prompt": "必須属性の欠落と監査ルール違反を同時に把握したい。確認すべきCMDB Health KPIを2つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "Completeness"
+      },
+      {
+        "id": "b",
+        "label": "Compliance"
+      },
+      {
+        "id": "c",
+        "label": "Availability"
+      },
+      {
+        "id": "d",
+        "label": "Password Strength"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b"
+    ],
+    "explanation": "必須/推奨属性の欠落はCompleteness、定義した監査条件への適合はComplianceで評価します。",
+    "tags": [
+      "CMDB Health",
+      "quality"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/overview-cmdb-health.html"
+  },
+  {
+    "id": "cis-df-govern-035",
+    "domainId": "govern",
+    "objective": "CMDB Health: map data quality issues to KPIs",
+    "type": "matching",
+    "scenario": true,
+    "prompt": "各CMDB品質問題を、主に評価するCMDB Health KPIへ対応付けてください。同じKPIを複数回使用できます。",
+    "matchingItems": [
+      {
+        "id": "missing",
+        "label": "必須属性が未入力",
+        "correctTargetId": "completeness"
+      },
+      {
+        "id": "stale",
+        "label": "長期間更新されていないCI",
+        "correctTargetId": "correctness"
+      },
+      {
+        "id": "duplicate",
+        "label": "Identification上同一とみなされる重複CI",
+        "correctTargetId": "correctness"
+      },
+      {
+        "id": "audit",
+        "label": "定義した監査条件に属性値が適合していない",
+        "correctTargetId": "compliance"
+      }
+    ],
+    "matchingTargets": [
+      {
+        "id": "completeness",
+        "label": "Completeness"
+      },
+      {
+        "id": "correctness",
+        "label": "Correctness"
+      },
+      {
+        "id": "compliance",
+        "label": "Compliance"
+      },
+      {
+        "id": "relationships",
+        "label": "Relationships"
+      }
+    ],
+    "explanation": "未入力はCompleteness、stale/duplicateはCorrectness、監査条件への適合はComplianceで評価します。Correctnessは複数の問題種別に対応します。",
+    "tags": [
+      "matching",
+      "CMDB Health",
+      "Completeness",
+      "Correctness",
+      "Compliance"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/r_CMDBHealthMetrics.html"
+  },
+  {
+    "id": "cis-df-insight-001",
+    "domainId": "insight",
+    "objective": "Insight: CMDB business value",
+    "type": "single",
+    "scenario": true,
+    "prompt": "変更作業の前に、対象サーバーがどのアプリケーションサービスへ影響するか把握したい。信頼できるCMDB関係データがもたらす価値として最も適切なのはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "影響分析の精度向上"
+      },
+      {
+        "id": "b",
+        "label": "MFAの不要化"
+      },
+      {
+        "id": "c",
+        "label": "メール配信の高速化"
+      },
+      {
+        "id": "d",
+        "label": "ライセンス契約の自動解除"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "正確なCIと関係データは変更や障害の影響分析など、ServiceNow製品がCMDBを活用する業務判断の精度を高めます。",
+    "tags": [
+      "business value",
+      "impact analysis"
+    ],
+    "sourceUrl": "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0012913"
+  },
+  {
+    "id": "cis-df-insight-002",
+    "domainId": "insight",
+    "objective": "CMDB Query Builder: complex queries",
+    "type": "single",
+    "scenario": true,
+    "prompt": "アプリケーションサービスに関連するServerとDatabaseを関係条件付きで抽出したい。最も適した機能はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CMDB Query Builder"
+      },
+      {
+        "id": "b",
+        "label": "Data Manager Attestation"
+      },
+      {
+        "id": "c",
+        "label": "CI Class Manager"
+      },
+      {
+        "id": "d",
+        "label": "Duplicate CI Remediator"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CMDB Query Builderは複数CMDBクラスや非CMDBテーブルを関係で接続した複雑なqueryを構築できます。",
+    "tags": [
+      "Query Builder",
+      "relationships"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/use-cmdb-query-builder.html"
+  },
+  {
+    "id": "cis-df-insight-003",
+    "domainId": "insight",
+    "objective": "CMDB Query Builder: node filters",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Query BuilderでServerクラスを含めた後、OSがLinuxのServerだけに絞りたい。どこで条件を設定しますか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Server nodeの属性filter"
+      },
+      {
+        "id": "b",
+        "label": "Data Manager policy"
+      },
+      {
+        "id": "c",
+        "label": "Principal Class designation"
+      },
+      {
+        "id": "d",
+        "label": "CMDB Health auditだけ"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Query Builderでは各nodeの属性へfilterを設定し、対象CI集合を絞り込めます。",
+    "tags": [
+      "Query Builder",
+      "filter"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/use-cmdb-query-builder.html"
+  },
+  {
+    "id": "cis-df-insight-004",
+    "domainId": "insight",
+    "objective": "CMDB Query Builder: relationship direction",
+    "type": "single",
+    "scenario": true,
+    "prompt": "ServerとApplicationの関係を「どちらがparent/childか」指定してqueryしたい。設定すべきものはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Relationship Direction"
+      },
+      {
+        "id": "b",
+        "label": "Attestation owner"
+      },
+      {
+        "id": "c",
+        "label": "Retirement Definition"
+      },
+      {
+        "id": "d",
+        "label": "Health inclusion rule"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Query BuilderのConnection PropertiesでRelationship Directionを設定し、parent/childを指定できます。",
+    "tags": [
+      "Query Builder",
+      "relationship direction"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb-query-bldr-relationship-props.html"
+  },
+  {
+    "id": "cis-df-insight-005",
+    "domainId": "insight",
+    "objective": "CMDB Query Builder: relationship levels",
+    "type": "single",
+    "scenario": true,
+    "prompt": "直接関係だけでなく2階層先まで関係をたどって結果を取りたい。利用する設定はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Relationship Levels"
+      },
+      {
+        "id": "b",
+        "label": "Certification fields"
+      },
+      {
+        "id": "c",
+        "label": "Hardware Status Mapping"
+      },
+      {
+        "id": "d",
+        "label": "Principal Class"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Relationship Levelsでfirst-levelだけかsecond-level relationshipsまでqueryするかを指定できます。",
+    "tags": [
+      "Query Builder",
+      "relationship level"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb-query-bldr-relationship-props.html"
+  },
+  {
+    "id": "cis-df-insight-006",
+    "domainId": "insight",
+    "objective": "CMDB Query Builder: no relationship",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Databaseとの関係を持たないApplication CIだけを抽出したい。Query Builderで使える条件はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "No Relationships"
+      },
+      {
+        "id": "b",
+        "label": "Archive policy"
+      },
+      {
+        "id": "c",
+        "label": "Required metric"
+      },
+      {
+        "id": "d",
+        "label": "CMDB 360 Find Gap"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Query Builderは指定クラスとのrelationを持たないCIを検索するNo Relationships条件を利用できます。",
+    "tags": [
+      "Query Builder",
+      "No Relationships"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb-query-bldr-relationship-props.html"
+  },
+  {
+    "id": "cis-df-insight-007",
+    "domainId": "insight",
+    "objective": "CMDB Query Builder: query contents",
+    "type": "multiple",
+    "scenario": false,
+    "prompt": "CMDB Query Builderのqueryに含められる要素を3つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "CMDBクラス"
+      },
+      {
+        "id": "b",
+        "label": "非CMDBテーブル"
+      },
+      {
+        "id": "c",
+        "label": "CI間のrelationships/references"
+      },
+      {
+        "id": "d",
+        "label": "Data Manager approval taskだけ"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "CMDB Query BuilderはCMDBクラス、対応する非CMDBテーブル、relationships/referencesを組み合わせたqueryを構築します。",
+    "tags": [
+      "Query Builder"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/use-cmdb-query-builder.html"
+  },
+  {
+    "id": "cis-df-insight-008",
+    "domainId": "insight",
+    "objective": "Natural Language Query: purpose",
+    "type": "single",
+    "scenario": true,
+    "prompt": "管理者が「Linux servers in Tokyo」のような日常言語でCMDB検索を始めたい。適切な機能はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Intelligent Search for CMDB / NLQ"
+      },
+      {
+        "id": "b",
+        "label": "Duplicate CI Remediator"
+      },
+      {
+        "id": "c",
+        "label": "Data Manager Certification"
+      },
+      {
+        "id": "d",
+        "label": "CI Class Manager only"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Intelligent Search for CMDBは自然言語入力をCMDB queryへ変換してCIや関係を検索できます。",
+    "tags": [
+      "NLQ",
+      "Intelligent Search"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/platform-administration/search-administration/intelligent-search-cmdb.html"
+  },
+  {
+    "id": "cis-df-insight-009",
+    "domainId": "insight",
+    "objective": "Natural Language Query: ambiguity",
+    "type": "single",
+    "scenario": true,
+    "prompt": "自然言語queryのテーブル名やrelationshipが曖昧です。Intelligent Searchの期待動作として正しいものはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "曖昧さを解消するrefinementを促す"
+      },
+      {
+        "id": "b",
+        "label": "曖昧でも必ず最初の候補を無条件実行する"
+      },
+      {
+        "id": "c",
+        "label": "全CIを削除する"
+      },
+      {
+        "id": "d",
+        "label": "Query Builderを無効化する"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Intelligent Searchは曖昧なtable nameやrelationshipに対してrefinementを行い、意図を明確化してからqueryへ変換できます。",
+    "tags": [
+      "NLQ",
+      "ambiguity"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/platform-administration/search-administration/intelligent-search-cmdb.html"
+  },
+  {
+    "id": "cis-df-insight-010",
+    "domainId": "insight",
+    "objective": "Natural Language Query: handoff to Query Builder",
+    "type": "single",
+    "scenario": true,
+    "prompt": "NLQで作った検索をさらに複雑な関係条件へ編集したい。適切な流れはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "生成されたqueryをCMDB Query Builderで開いて編集する"
+      },
+      {
+        "id": "b",
+        "label": "Data Managerへ変換する"
+      },
+      {
+        "id": "c",
+        "label": "CI Class Managerで回答を編集する"
+      },
+      {
+        "id": "d",
+        "label": "Health scoreへ変換する"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Intelligent Searchで生成した複雑なqueryはQuery Builder canvasで開き、詳細な編集を続けられます。",
+    "tags": [
+      "NLQ",
+      "Query Builder"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/platform-administration/search-administration/intelligent-search-cmdb.html"
+  },
+  {
+    "id": "cis-df-insight-011",
+    "domainId": "insight",
+    "objective": "CMDB 360 saved query: Get Records",
+    "type": "single",
+    "scenario": true,
+    "prompt": "特定のdiscovery sourceが報告したServer CIを条件付きで一覧化したい。CMDB 360のどのquery typeが適切ですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Get Records"
+      },
+      {
+        "id": "b",
+        "label": "Find Gap"
+      },
+      {
+        "id": "c",
+        "label": "Compare Attribute Valuesだけ"
+      },
+      {
+        "id": "d",
+        "label": "Attestation"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Get Records queryは指定クラス・条件・discovery sourceに一致するCMDB 360 recordsを取得します。",
+    "tags": [
+      "CMDB 360",
+      "Get Records"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb360-exp-cmdb-workspace.html"
+  },
+  {
+    "id": "cis-df-insight-012",
+    "domainId": "insight",
+    "objective": "CMDB 360 saved query: Find Gap",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Source Aが報告したCIのうちSource Bが報告していないものをレポートしたい。適切なquery typeはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Find Gap"
+      },
+      {
+        "id": "b",
+        "label": "Get Records only"
+      },
+      {
+        "id": "c",
+        "label": "Certification"
+      },
+      {
+        "id": "d",
+        "label": "Dependency View"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Find Gapはdiscovery source間の報告有無の差を分析するためのqueryです。",
+    "tags": [
+      "CMDB 360",
+      "Find Gap"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb360-exp-cmdb-workspace.html"
+  },
+  {
+    "id": "cis-df-insight-013",
+    "domainId": "insight",
+    "objective": "CMDB 360 saved query: Compare Attribute Values",
+    "type": "single",
+    "scenario": true,
+    "prompt": "同じCIの属性値がSource AとSource Bで違うケースを特定したい。適切なquery typeはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Compare Attribute Values"
+      },
+      {
+        "id": "b",
+        "label": "Find Gap"
+      },
+      {
+        "id": "c",
+        "label": "Archive"
+      },
+      {
+        "id": "d",
+        "label": "Required metric"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Compare Attribute Valuesは複数sourceやCMDB current valueとの属性差分を調べるqueryです。",
+    "tags": [
+      "CMDB 360",
+      "Compare Attribute Values"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/configuration-management-database-cmdb/cmdb360-exp-cmdb-workspace.html"
+  },
+  {
+    "id": "cis-df-insight-014",
+    "domainId": "insight",
+    "objective": "Unified Map: use",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Service Graph WorkspaceでCIとその接続関係を階層的な1つのmap experienceで確認したい。適した機能はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Unified Map"
+      },
+      {
+        "id": "b",
+        "label": "Import Set"
+      },
+      {
+        "id": "c",
+        "label": "Data Manager Delete"
+      },
+      {
+        "id": "d",
+        "label": "CI Class Manager Attributes"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Unified MapはCMDBとCI、その接続をグラフィカルに表示し、Dependency ViewsとService Mappingの一部機能を統合したmap experienceです。",
+    "tags": [
+      "Unified Map",
+      "visualization"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/sg-workspace-governance-view.html"
+  },
+  {
+    "id": "cis-df-insight-015",
+    "domainId": "insight",
+    "objective": "Dependency Views: impact visualization",
+    "type": "single",
+    "scenario": true,
+    "prompt": "あるCIがどのapplicationやbusiness serviceの一部で何をsupportしているかグラフィカルに確認したい。適切な機能はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Dependency Views"
+      },
+      {
+        "id": "b",
+        "label": "Certification"
+      },
+      {
+        "id": "c",
+        "label": "Identification Rule editor"
+      },
+      {
+        "id": "d",
+        "label": "Asset-CI Mapping"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Dependency ViewsはCIと、それが参加・支援するapplicationやbusiness serviceを含むinfrastructure viewを提供します。",
+    "tags": [
+      "Dependency Views",
+      "impact"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/sg-workspace-governance-view.html"
+  },
+  {
+    "id": "cis-df-insight-016",
+    "domainId": "insight",
+    "objective": "Data Foundations Dashboard: purpose",
+    "type": "single",
+    "scenario": true,
+    "prompt": "CSDM実装の品質・成熟度をFoundation/Crawl/Walk/Run/Flyの段階で把握したい。使うべきものはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "CSDM Data Foundations Dashboard"
+      },
+      {
+        "id": "b",
+        "label": "Duplicate CI Remediatorだけ"
+      },
+      {
+        "id": "c",
+        "label": "Import Set log"
+      },
+      {
+        "id": "d",
+        "label": "CI Class Manager hierarchyだけ"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CSDM Data Foundations DashboardはCSDM指標を実装stageごとに表示し、改善点を把握するために使います。",
+    "tags": [
+      "Data Foundations Dashboard",
+      "CSDM"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/csdm-data-foundations-dashboard.html"
+  },
+  {
+    "id": "cis-df-insight-017",
+    "domainId": "insight",
+    "objective": "Data Foundations Dashboard: Foundation stage",
+    "type": "single",
+    "scenario": true,
+    "prompt": "LocationやCompanyなどの基礎データ不足が後続のCSDM活用を妨げています。まず確認すべきdashboard stageはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Foundation"
+      },
+      {
+        "id": "b",
+        "label": "Fly"
+      },
+      {
+        "id": "c",
+        "label": "Runだけ"
+      },
+      {
+        "id": "d",
+        "label": "Archive"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Foundation stageは他のCSDM領域から参照される基礎データの整備を対象にします。",
+    "tags": [
+      "Data Foundations Dashboard",
+      "Foundation"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/configuration-management-database-cmdb/csdm-data-foundations-dashboard.html"
+  },
+  {
+    "id": "cis-df-insight-018",
+    "domainId": "insight",
+    "objective": "Dashboard playbooks: remediation guidance",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Dashboardで品質指標の問題を見つけました。単に数値を見るだけでなく、問題の意味と改善行動のガイドが欲しい。Blueprint上で活用を理解すべきものはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Data Foundations DashboardのPlaybook"
+      },
+      {
+        "id": "b",
+        "label": "Identification Ruleを削除する"
+      },
+      {
+        "id": "c",
+        "label": "Client Script"
+      },
+      {
+        "id": "d",
+        "label": "Asset depreciation"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CIS-DF BlueprintはData Foundations DashboardのPlaybookをいつ使い、どのようなbenefitがあるかをInsight領域の対象にしています。",
+    "tags": [
+      "playbook",
+      "dashboard"
+    ],
+    "sourceUrl": "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0012913"
+  },
+  {
+    "id": "cis-df-insight-019",
+    "domainId": "insight",
+    "objective": "Insight: map analysis needs to CMDB insight tools",
+    "type": "matching",
+    "scenario": true,
+    "prompt": "各分析要件を、最も適切なCMDB機能へ対応付けてください。",
+    "matchingItems": [
+      {
+        "id": "natural",
+        "label": "自然言語からCMDB検索を開始する",
+        "correctTargetId": "nlq"
+      },
+      {
+        "id": "relationship-query",
+        "label": "複数クラスと関係条件を組み合わせて抽出する",
+        "correctTargetId": "query-builder"
+      },
+      {
+        "id": "visual",
+        "label": "CIの依存関係と影響範囲をグラフィカルに確認する",
+        "correctTargetId": "map"
+      }
+    ],
+    "matchingTargets": [
+      {
+        "id": "nlq",
+        "label": "Intelligent Search for CMDB"
+      },
+      {
+        "id": "query-builder",
+        "label": "CMDB Query Builder"
+      },
+      {
+        "id": "map",
+        "label": "Unified Map / Dependency Views"
+      }
+    ],
+    "explanation": "自然言語検索はIntelligent Search、複雑な関係検索はQuery Builder、依存関係の可視化はUnified Map/Dependency Viewsが適します。",
+    "tags": [
+      "matching",
+      "Intelligent Search",
+      "Query Builder",
+      "Unified Map"
+    ],
+    "sourceUrl": "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0012913"
+  },
+  {
+    "id": "cis-df-insight-020",
+    "domainId": "insight",
+    "objective": "Insight: trusted CMDB outcomes",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Incident/Changeなど複数ServiceNow製品がCMDBを活用します。最大の価値を得る前提として最も重要なのはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "正確で関係付けられた信頼できるCIデータを維持する"
+      },
+      {
+        "id": "b",
+        "label": "CI件数だけを最大化する"
+      },
+      {
+        "id": "c",
+        "label": "全CIを同一クラスへ入れる"
+      },
+      {
+        "id": "d",
+        "label": "relationshipsを作らない"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CMDBのビジネス価値は単なるレコード数ではなく、正確なCIとrelationshipsをServiceNow製品や業務判断で利用できることにあります。",
+    "tags": [
+      "business value",
+      "data quality"
+    ],
+    "sourceUrl": "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0012913"
+  },
+  {
+    "id": "cis-df-csdm-001",
+    "domainId": "csdm",
+    "objective": "CSDM: Foundation domain",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Company、Location、Departmentなど、他のCSDM domainから参照される基礎データを整備しています。該当するdomainはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Foundation"
+      },
+      {
+        "id": "b",
+        "label": "Service Delivery"
+      },
+      {
+        "id": "c",
+        "label": "Build & Integration"
+      },
+      {
+        "id": "d",
+        "label": "Service Consumption"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Foundation domainは他のCSDM domainから参照される重要なbase/reference dataを保持します。",
+    "tags": [
+      "CSDM",
+      "Foundation"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/common-service-data-model-csdm/foundation-domain.html"
+  },
+  {
+    "id": "cis-df-csdm-002",
+    "domainId": "csdm",
+    "objective": "CSDM: Foundation data characteristics",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Foundation domainのデータを通常のCI relationshipとして扱う案があります。正しい理解はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Foundation tablesは主にreferential dataで、CMDB relationshipに使うCIとは性質が異なる"
+      },
+      {
+        "id": "b",
+        "label": "Foundationの全recordは必ずcmdb_ciを継承する"
+      },
+      {
+        "id": "c",
+        "label": "FoundationはDiscovery専用domainである"
+      },
+      {
+        "id": "d",
+        "label": "Foundationは廃止済みCI専用である"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Foundation domainのtablesは他domainから参照されるbase dataを保持し、通常のCMDB relationshipsに使うCIではないものを含みます。",
+    "tags": [
+      "CSDM",
+      "Foundation",
+      "reference data"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/common-service-data-model-csdm/foundation-domain.html"
+  },
+  {
+    "id": "cis-df-csdm-003",
+    "domainId": "csdm",
+    "objective": "CSDM: Design & Planning",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Enterprise ArchitectがBusiness ApplicationとBusiness Capabilityを使って将来のdigital productを設計・計画しています。該当するdomainはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Design & Planning"
+      },
+      {
+        "id": "b",
+        "label": "Service Delivery"
+      },
+      {
+        "id": "c",
+        "label": "Service Consumption"
+      },
+      {
+        "id": "d",
+        "label": "Foundation only"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Design & Planning domainはEnterprise ArchitectやDigital Product Ownerがdigital productsを設計・計画するための非運用データを扱います。",
+    "tags": [
+      "CSDM",
+      "Design & Planning"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/common-service-data-model-csdm/design-domain.html"
+  },
+  {
+    "id": "cis-df-csdm-004",
+    "domainId": "csdm",
+    "objective": "CSDM: operational vs planning data",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Business ApplicationをIncidentの対象となる運用CIと同じ意味で扱おうとしています。最も適切な説明はどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Design & PlanningのBusiness Applicationは計画・ポートフォリオ観点の非運用オブジェクトとして扱う"
+      },
+      {
+        "id": "b",
+        "label": "Business Applicationは必ず物理Serverと同義"
+      },
+      {
+        "id": "c",
+        "label": "Business ApplicationはAsset depreciation専用"
+      },
+      {
+        "id": "d",
+        "label": "Business ApplicationはDiscovery source名である"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Design & Planning domainはdigital productの設計・計画を扱い、Business Application等は運用インフラCIとは役割が異なります。",
+    "tags": [
+      "CSDM",
+      "Business Application"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/servicenow-platform/common-service-data-model-csdm/design-domain.html"
+  },
+  {
+    "id": "cis-df-csdm-005",
+    "domainId": "csdm",
+    "objective": "CSDM: Build & Integration",
+    "type": "single",
+    "scenario": true,
+    "prompt": "DevOpsチームがSDLCやAgile開発中のlogical development detailsをモデル化しています。該当するdomainはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Build & Integration"
+      },
+      {
+        "id": "b",
+        "label": "Service Consumption"
+      },
+      {
+        "id": "c",
+        "label": "Foundation"
+      },
+      {
+        "id": "d",
+        "label": "Manage Portfolio"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Build & Integration domainはdigital productのbuild phaseで使われる開発・統合の論理情報を扱います。",
+    "tags": [
+      "CSDM",
+      "Build & Integration"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/common-service-data-model-csdm/csdm-conceptual-model.html"
+  },
+  {
+    "id": "cis-df-csdm-006",
+    "domainId": "csdm",
+    "objective": "CSDM: Service Delivery",
+    "type": "single",
+    "scenario": true,
+    "prompt": "ユーザーへサービスを届けるためのtechnology、integration、operational modelを表現したい。該当するdomainはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Service Delivery"
+      },
+      {
+        "id": "b",
+        "label": "Ideation & Strategy"
+      },
+      {
+        "id": "c",
+        "label": "Foundation"
+      },
+      {
+        "id": "d",
+        "label": "Service Consumptionだけ"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Service Delivery domainはサービス提供を支えるtechnologyやoperational modelを表現します。",
+    "tags": [
+      "CSDM",
+      "Service Delivery"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/common-service-data-model-csdm/csdm-conceptual-model.html"
+  },
+  {
+    "id": "cis-df-csdm-007",
+    "domainId": "csdm",
+    "objective": "CSDM: Service Consumption",
+    "type": "single",
+    "scenario": true,
+    "prompt": "内部・外部利用者がservice catalogを通じて利用するBusiness ServiceやService Offeringを整理しています。該当するdomainはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Service Consumption"
+      },
+      {
+        "id": "b",
+        "label": "Build & Integration"
+      },
+      {
+        "id": "c",
+        "label": "Foundation"
+      },
+      {
+        "id": "d",
+        "label": "Design & Planning only"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Service Consumption domainは利用者が消費するservicesやcatalog-based requestsを扱います。",
+    "tags": [
+      "CSDM",
+      "Service Consumption"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/common-service-data-model-csdm/csdm-conceptual-model.html"
+  },
+  {
+    "id": "cis-df-csdm-008",
+    "domainId": "csdm",
+    "objective": "CSDM: Manage Portfolio",
+    "type": "single",
+    "scenario": true,
+    "prompt": "Service Ownerが複数domainにまたがるserviceをポートフォリオとして管理したい。該当するlayer/domainはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "Manage Portfolio"
+      },
+      {
+        "id": "b",
+        "label": "Foundation only"
+      },
+      {
+        "id": "c",
+        "label": "Build & Integration only"
+      },
+      {
+        "id": "d",
+        "label": "CMDB Health"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "Manage Portfolioは他のCSDM domainsを横断し、service ownerがserviceをportfolioとして管理するためのlayerです。",
+    "tags": [
+      "CSDM",
+      "Manage Portfolio"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/common-service-data-model-csdm/csdm-conceptual-model.html"
+  },
+  {
+    "id": "cis-df-csdm-009",
+    "domainId": "csdm",
+    "objective": "CSDM: stakeholder mapping",
+    "type": "single",
+    "scenario": true,
+    "prompt": "新しいデータをどのCSDM domainへ置くか決める会議で、technical teamだけで決定しようとしています。より適切なアプローチはどれですか？",
+    "options": [
+      {
+        "id": "a",
+        "label": "データの意味と利用者を確認し、関連stakeholderと標準CSDM定義に沿ってmappingする"
+      },
+      {
+        "id": "b",
+        "label": "名前が似たtableへ即登録する"
+      },
+      {
+        "id": "c",
+        "label": "毎回custom classを作る"
+      },
+      {
+        "id": "d",
+        "label": "domainを使わず全てcmdb_ciへ入れる"
+      }
+    ],
+    "correctOptionIds": [
+      "a"
+    ],
+    "explanation": "CIS-DF Blueprintは異なるstakeholderと協働し、CI/objectsを正しいCSDM domainへmapする判断を重視します。",
+    "tags": [
+      "CSDM",
+      "stakeholders",
+      "mapping"
+    ],
+    "sourceUrl": "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0012913"
+  },
+  {
+    "id": "cis-df-csdm-010",
+    "domainId": "csdm",
+    "objective": "CSDM: map data use cases to domains",
+    "type": "matching",
+    "scenario": true,
+    "prompt": "各データ利用シーンを、最も適切なCSDM domainへ対応付けてください。使用しない選択肢があります。",
+    "matchingItems": [
+      {
+        "id": "reference",
+        "label": "Company・Locationなど他domainから参照される基礎データ",
+        "correctTargetId": "foundation"
+      },
+      {
+        "id": "planning",
+        "label": "Business Applicationなどを使った将来のdigital product設計・計画",
+        "correctTargetId": "design"
+      },
+      {
+        "id": "delivery",
+        "label": "サービス提供を支えるtechnologyやoperational model",
+        "correctTargetId": "service-delivery"
+      },
+      {
+        "id": "consumption",
+        "label": "利用者が消費するBusiness ServiceやService Offering",
+        "correctTargetId": "service-consumption"
+      }
+    ],
+    "matchingTargets": [
+      {
+        "id": "foundation",
+        "label": "Foundation"
+      },
+      {
+        "id": "design",
+        "label": "Design & Planning"
+      },
+      {
+        "id": "service-delivery",
+        "label": "Service Delivery"
+      },
+      {
+        "id": "service-consumption",
+        "label": "Service Consumption"
+      },
+      {
+        "id": "build",
+        "label": "Build & Integration"
+      }
+    ],
+    "explanation": "Foundationは参照基礎データ、Design & Planningは計画、Service Deliveryは提供基盤、Service Consumptionは利用者が消費するサービスを扱います。",
+    "tags": [
+      "matching",
+      "CSDM",
+      "domains"
+    ],
+    "sourceUrl": "https://www.servicenow.com/docs/r/zurich/servicenow-platform/common-service-data-model-csdm/csdm-conceptual-model.html"
+  },
+  {
+    "id": "cis-df-csdm-011",
+    "domainId": "csdm",
+    "objective": "CSDM: benefits",
+    "type": "multiple",
+    "scenario": true,
+    "prompt": "CSDMを採用するメリットを2つ選んでください。",
+    "options": [
+      {
+        "id": "a",
+        "label": "ServiceNow製品間でservice dataを一貫したモデルで利用しやすくする"
+      },
+      {
+        "id": "b",
+        "label": "stakeholder間で共通のデータ概念と関係を使いやすくする"
+      },
+      {
+        "id": "c",
+        "label": "CMDB Healthやgovernanceを不要にする"
+      },
+      {
+        "id": "d",
+        "label": "IREを完全に不要にする"
+      }
+    ],
+    "correctOptionIds": [
+      "a",
+      "b"
+    ],
+    "explanation": "CSDMはservice dataの共通モデルを提供し、複数製品・stakeholderで一貫したデータ活用を促進します。ただし品質管理やIREを不要にするものではありません。",
+    "tags": [
+      "CSDM",
+      "benefits"
+    ],
+    "sourceUrl": "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0012913"
+  }
+]

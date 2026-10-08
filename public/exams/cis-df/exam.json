@@ -1,0 +1,35 @@
+{
+  "id": "cis-df",
+  "name": "CIS-DF — Data Foundations (CMDB and CSDM)",
+  "durationMinutes": 90,
+  "questionCount": 75,
+  "domains": [
+    {
+      "id": "configuration",
+      "name": "Configuration",
+      "weight": 15
+    },
+    {
+      "id": "ingest",
+      "name": "Ingest",
+      "weight": 19
+    },
+    {
+      "id": "govern",
+      "name": "Govern",
+      "weight": 35
+    },
+    {
+      "id": "insight",
+      "name": "Insight",
+      "weight": 20
+    },
+    {
+      "id": "csdm",
+      "name": "CSDM Fundamentals",
+      "weight": 11
+    }
+  ],
+  "contentVersion": 4,
+  "updatedAt": "2026-10-07"
+}

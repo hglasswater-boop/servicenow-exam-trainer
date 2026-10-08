@@ -1,0 +1,18 @@
+{
+  "name": "ServiceNow Exam Trainer",
+  "short_name": "Exam Trainer",
+  "description": "ServiceNow資格試験の学習トレーナー",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1714",
+  "theme_color": "#0b1714",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
